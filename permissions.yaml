@@ -1,0 +1,46 @@
+# Blockchain A — Identity & Permissions Store
+# Inc 1: static YAML file (read-only at runtime)
+# Inc 2: migrate to Hyperledger Fabric
+
+users:
+  chris:
+    display_name: "Christopher Hartline"
+    roles:
+      - operator
+      - admin
+    permissions:
+      # Tier 1 — read/query (no confirmation required)
+      - resource: "*"
+        actions:
+          - list
+          - query
+          - read
+          - status
+          - describe
+        tier: 1
+
+      # Tier 2 — non-destructive writes (plan shown, auto-proceed)
+      - resource: "gcp:projects/*/services/*"
+        actions:
+          - deploy:staging
+          - create:staging
+          - update:staging
+        tier: 2
+
+      # Tier 3 — risky/costly (requires voice confirmation)
+      - resource: "gcp:projects/*/services/*"
+        actions:
+          - deploy:production
+          - create:production
+          - update:production
+        tier: 3
+        requires_confirmation: true
+
+      # Tier 4 — destructive/irreversible (QRNG challenge + time delay in Inc 3)
+      - resource: "gcp:*"
+        actions:
+          - iam:modify
+          - delete
+          - destroy
+        tier: 4
+        requires_confirmation: true

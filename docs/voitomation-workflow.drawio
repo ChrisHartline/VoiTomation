@@ -1,0 +1,316 @@
+<mxfile host="app.diagrams.net" modified="2026-04-01T00:00:00.000Z" agent="VoiTomation" version="21.0.0" type="device">
+  <diagram id="vt-workflow" name="VoiTomation Workflow">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ============================================================ -->
+        <!-- TITLE                                                         -->
+        <!-- ============================================================ -->
+        <mxCell id="title" value="VoiTomation — End-to-End Workflow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="285" y="10" width="600" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- SECTION BACKGROUNDS                                           -->
+        <!-- ============================================================ -->
+
+        <!-- ① Authentication -->
+        <mxCell id="bg_auth" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="20" y="55" width="1130" height="455" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_auth_lbl" value="① AUTHENTICATION" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontStyle=1;fontSize=11;fontColor=#336699;" vertex="1" parent="1">
+          <mxGeometry x="34" y="63" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ② Lily: Intent &amp; Planning -->
+        <mxCell id="bg_lily" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="20" y="520" width="1130" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_lily_lbl" value="② LILY — INTENT &amp; PLANNING" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontStyle=1;fontSize=11;fontColor=#336600;" vertex="1" parent="1">
+          <mxGeometry x="34" y="528" width="260" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ③ Governance -->
+        <mxCell id="bg_gov" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="20" y="750" width="1130" height="340" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_gov_lbl" value="③ GOVERNANCE GATE" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontStyle=1;fontSize=11;fontColor=#996600;" vertex="1" parent="1">
+          <mxGeometry x="34" y="758" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ④ Bounded Execution -->
+        <mxCell id="bg_exec" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1100" width="1130" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_exec_lbl" value="④ BOUNDED EXECUTION" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontStyle=1;fontSize=11;fontColor=#993300;" vertex="1" parent="1">
+          <mxGeometry x="34" y="1108" width="220" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ⑤ Audit &amp; Verification -->
+        <mxCell id="bg_audit" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;opacity=40;" vertex="1" parent="1">
+          <mxGeometry x="20" y="1360" width="1130" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="bg_audit_lbl" value="⑤ AUDIT &amp; VERIFICATION" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontStyle=1;fontSize=11;fontColor=#6600aa;" vertex="1" parent="1">
+          <mxGeometry x="34" y="1368" width="220" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ① AUTHENTICATION ELEMENTS                                     -->
+        <!-- ============================================================ -->
+
+        <!-- Chris (operator) -->
+        <mxCell id="chris" value="&lt;b&gt;Chris&lt;/b&gt;&lt;br&gt;Human Operator" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="505" y="68" width="160" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Voice Capture -->
+        <mxCell id="voice_cap" value="🎙 Voice Capture&lt;br&gt;&lt;i&gt;mic input → Google STT → transcript&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="485" y="178" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Voice Auth Service -->
+        <mxCell id="voice_auth" value="Voice Auth Service&lt;br&gt;&lt;i&gt;Biometric verify + liveness detection&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="485" y="278" width="200" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain A -->
+        <mxCell id="bc_a" value="&lt;b&gt;Blockchain A&lt;/b&gt;&lt;br&gt;Identity &amp; Permissions&lt;br&gt;&lt;i&gt;(Immutable — read only)&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="830" y="265" width="180" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Permission Check -->
+        <mxCell id="perm_check" value="Permission Check&lt;br&gt;Is Chris authorized?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=1;" vertex="1" parent="1">
+          <mxGeometry x="505" y="385" width="160" height="85" as="geometry" />
+        </mxCell>
+
+        <!-- Permission Denied -->
+        <mxCell id="perm_denied" value="❌ DENIED&lt;br&gt;Log to Blockchain B" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="830" y="407" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ② LILY ELEMENTS                                               -->
+        <!-- ============================================================ -->
+
+        <!-- Intent Extraction -->
+        <mxCell id="intent" value="🤖 &lt;b&gt;Lily&lt;/b&gt;: Intent Extraction&lt;br&gt;&lt;i&gt;utterance → {action, target, scope, constraints, tier}&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="535" width="300" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Plan Generation -->
+        <mxCell id="plan_gen" value="🤖 &lt;b&gt;Lily&lt;/b&gt;: Plan Generation&lt;br&gt;&lt;i&gt;intent → structured execution plan (steps + rollback)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="650" width="300" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ③ GOVERNANCE ELEMENTS                                         -->
+        <!-- ============================================================ -->
+
+        <!-- Governance Gate -->
+        <mxCell id="gov_gate" value="⚖️ Governance Gate&lt;br&gt;&lt;i&gt;IAM policy · Scope validator&lt;br&gt;SOP checker · Resource validator&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="765" width="300" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- OPA/Rego Policies -->
+        <mxCell id="opa" value="OPA / Rego Policies&lt;br&gt;&lt;i&gt;Deterministic rule engine&lt;br&gt;(independent of Lily)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="830" y="775" width="180" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Gate Decision -->
+        <mxCell id="gate_dec" value="Plan Valid?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="510" y="890" width="150" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Gate Blocked -->
+        <mxCell id="gate_blocked" value="🚫 BLOCKED&lt;br&gt;Lily revises or aborts" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="830" y="912" width="160" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Tier Check -->
+        <mxCell id="tier_check" value="Tier Check" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1015" width="150" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Confirmation (Chris) -->
+        <mxCell id="chris_confirm" value="💬 Voice Confirmation&lt;br&gt;&lt;i&gt;Chris speaks confirm phrase&lt;br&gt;(QRNG challenge — Inc 3)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="830" y="1008" width="180" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ④ EXECUTION ELEMENTS                                          -->
+        <!-- ============================================================ -->
+
+        <!-- Bounded Execution -->
+        <mxCell id="bounded_exec" value="🔒 Bounded Execution Runtime&lt;br&gt;&lt;i&gt;Sandboxed · drift detection · step monitoring&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="1115" width="300" height="65" as="geometry" />
+        </mxCell>
+
+        <!-- Tool: Linux -->
+        <mxCell id="tool_linux" value="🐧 Linux Tool&lt;br&gt;&lt;i&gt;Allowlisted shell cmds&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="180" y="1235" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Tool: GCP -->
+        <mxCell id="tool_gcp" value="☁️ GCP Tool&lt;br&gt;&lt;i&gt;Resource queries + actions&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="490" y="1235" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Tool: Terraform -->
+        <mxCell id="tool_tf" value="🏗️ Terraform Tool&lt;br&gt;&lt;i&gt;Plan + apply (IaC)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="800" y="1235" width="190" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- ⑤ AUDIT ELEMENTS                                              -->
+        <!-- ============================================================ -->
+
+        <!-- Blockchain B -->
+        <mxCell id="bc_b" value="&lt;b&gt;Blockchain B&lt;/b&gt; — Audit Trail&lt;br&gt;&lt;i&gt;Hash-chained: auth → intent → plan → gate → exec → outcome&lt;/i&gt;&lt;br&gt;&lt;i&gt;(Inc 1: SQLite · Inc 2: Hyperledger Fabric)&lt;/i&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="385" y="1380" width="400" height="95" as="geometry" />
+        </mxCell>
+
+        <!-- Outcome -->
+        <mxCell id="outcome" value="✅ Outcome + State Hash&lt;br&gt;&lt;i&gt;Verified · Auditable · Non-repudiable&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="435" y="1520" width="300" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- PASS-THROUGH AUTH NOTE                                        -->
+        <!-- ============================================================ -->
+        <mxCell id="note_passthru" value="Pass-Through Auth:&lt;br&gt;Voice auth → short-lived JWT scoped to&lt;br&gt;Chris's permissions. Lily presents token&lt;br&gt;to cloud APIs — she holds no permissions." style="text;html=1;strokeColor=#6c8ebf;fillColor=#dae8fc;align=left;verticalAlign=middle;spacingLeft=6;rounded=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="34" y="280" width="230" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- Explainability note -->
+        <mxCell id="note_xai" value="Explainable AI:&lt;br&gt;Structured plan stored in Blockchain B&lt;br&gt;before any execution. Full trace:&lt;br&gt;voice → intent → plan → gate → outcome." style="text;html=1;strokeColor=#82b366;fillColor=#d5e8d4;align=left;verticalAlign=middle;spacingLeft=6;rounded=1;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="34" y="660" width="230" height="75" as="geometry" />
+        </mxCell>
+
+        <!-- ============================================================ -->
+        <!-- EDGES / ARROWS                                                -->
+        <!-- ============================================================ -->
+
+        <!-- Chris → Voice Capture -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="chris" target="voice_cap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Voice Capture → Voice Auth -->
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="voice_cap" target="voice_auth" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Voice Auth → Blockchain A (lookup) -->
+        <mxCell id="e3" value="lookup" style="edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="voice_auth" target="bc_a" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain A → Permission Check (roles) -->
+        <mxCell id="e4" value="roles + tier" style="edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="bc_a" target="perm_check" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Voice Auth → Permission Check -->
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="voice_auth" target="perm_check" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Permission Check → Denied -->
+        <mxCell id="e6" value="DENIED" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#b85450;fontStyle=1;" edge="1" source="perm_check" target="perm_denied" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Permission Check → Intent (authorized) -->
+        <mxCell id="e7" value="AUTHORIZED" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#336600;fontStyle=1;" edge="1" source="perm_check" target="intent" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Intent → Plan Gen -->
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="intent" target="plan_gen" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Plan Gen → Governance Gate -->
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="plan_gen" target="gov_gate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Governance Gate ↔ OPA (bidirectional) -->
+        <mxCell id="e10" value="validate" style="edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="gov_gate" target="opa" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10b" value="result" style="edgeStyle=orthogonalEdgeStyle;dashed=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" source="opa" target="gov_gate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Gov Gate → Gate Decision -->
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="gov_gate" target="gate_dec" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Gate Decision → Blocked -->
+        <mxCell id="e12" value="BLOCKED" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontColor=#b85450;fontStyle=1;" edge="1" source="gate_dec" target="gate_blocked" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Gate Decision → Tier Check (PASS) -->
+        <mxCell id="e13" value="PASS" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontColor=#336600;fontStyle=1;" edge="1" source="gate_dec" target="tier_check" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier Check → Confirmation (Tier 3-4) -->
+        <mxCell id="e14" value="Tier 3-4" style="edgeStyle=orthogonalEdgeStyle;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontStyle=2;" edge="1" source="tier_check" target="chris_confirm" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Tier Check → Bounded Exec (Tier 1-2, auto) -->
+        <mxCell id="e15" value="Tier 1-2 (auto)" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontStyle=2;" edge="1" source="tier_check" target="bounded_exec" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Confirmation → Bounded Exec -->
+        <mxCell id="e16" value="confirmed" style="edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;fontStyle=2;" edge="1" source="chris_confirm" target="bounded_exec" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Bounded Exec → Linux -->
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="bounded_exec" target="tool_linux" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Bounded Exec → GCP -->
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="bounded_exec" target="tool_gcp" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Bounded Exec → Terraform -->
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" source="bounded_exec" target="tool_tf" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Linux → Blockchain B -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="tool_linux" target="bc_b" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- GCP → Blockchain B -->
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="tool_gcp" target="bc_b" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Terraform → Blockchain B -->
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="tool_tf" target="bc_b" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Blockchain B → Outcome -->
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="bc_b" target="outcome" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
